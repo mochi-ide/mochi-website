@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOCHI - Desktop AI Log Analyzer</title>
+    <meta name="description"
+        content="MOCHI is a powerful desktop log analyzer that runs locally. Visualize workflows, debug with local LLMs, and keep your data private.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <div class="glow-spot top-left"></div>
+    <div class="glow-spot bottom-right"></div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Mochi Logo">
+                <span>MOCHI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#download" class="btn-primary small">Download v1.0</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <div class="badge">Desktop Native App</div>
+                <h1>Your Intelligent <span class="gradient-text">Local</span> Log Companion</h1>
+                <p class="subtitle">The cute but powerful log analyzer that lives on your machine. No data leaves your
+                    device. Debug faster with local AI context.</p>
+                <div class="cta-group">
+                    <a href="#download" class="btn-primary">Download for Mac</a>
+                    <a href="#features" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-container">
+                    <img src="assets/dashboard.png" alt="Mochi Dashboard Interface" class="dashboard-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features container">
+            <div class="section-header">
+                <h2>Intelligence Meets Observability</h2>
+                <p>Mochi goes beyond grep. It understands the <em>intent</em> behind the logs.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card glass">
+                    <div class="icon-box">🧠</div>
+                    <h3>Smart Log Analysis</h3>
+                    <p>Filters noise and highlights logs relevant to your current debugging session using advanced
+                        heuristics.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="icon-box">💬</div>
+                    <h3>LLM Chat Context</h3>
+                    <p>Chat with your logs. Ask "Why did the transaction fail?" and get answers based on the log stream.
+                    </p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="icon-box">🕸️</div>
+                    <h3>State Machine Viz</h3>
+                    <p>Automatically reconstructs and visualizes the state machine flow from your log sequences.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="icon-box">🧬</div>
+                    <h3>Codebase Embeddings</h3>
+                    <p>Add embeddings to give the model deep context on your code paths and state transitions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities" class="capabilities container">
+            <div class="capability-row">
+                <div class="cap-text">
+                    <h3>Visual Debugging</h3>
+                    <p>Don't just read logs. See them. Mochi maps log entries to visual state transitions, helping you
+                        spot deviations from the expected flow instantly.</p>
+                    <ul class="check-list">
+                        <li>Real-time state tracking</li>
+                        <li>Anomaly detection</li>
+                        <li>Visual path reconstruction</li>
+                    </ul>
+                </div>
+                <div class="cap-visual glass">
+                    <!-- Abstract representation of state machine -->
+                    <div class="node-graph">
+                        <div class="node n1">Idle</div>
+                        <div class="line l1"></div>
+                        <div class="node n2 active">Processing</div>
+                        <div class="line l2"></div>
+                        <div class="node n3 error">Error</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="cta-section container">
+            <div class="glass cta-box">
+                <h2>Ready to debug smarter?</h2>
+                <p>Join the developers using Mochi to save hours on log analysis.</p>
+                <button class="btn-primary">Download Mochi v1.0</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>MOCHI</h4>
+                <p>Machine Output Checker & Heuristic Intelligence</p>
+            </div>
+            <div class="footer-col">
+                <p>&copy; 2025 Mochi Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
