@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Design Options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="playground.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="theme-pastel">
+
+    <div class="app-container">
+        <!-- Menu Bar -->
+        <header class="menu-bar">
+            <div class="menu-left">
+                <i class="fa-brands fa-apple"></i>
+                <span class="menu-app-name">Mochi</span>
+                <span class="menu-item">File</span>
+                <span class="menu-item">Edit</span>
+                <span class="menu-item">View</span>
+                <span class="menu-item">Tools</span>
+                <span class="menu-item">Highlighters</span>
+                <span class="menu-item">Encoding</span>
+                <span class="menu-item">Favorites</span>
+                <span class="menu-item">Help</span>
+            </div>
+        </header>
+
+
+        <!-- Main Content Area (Logs + Filtered Logs) -->
+        <div class="main-content">
+            <!-- Custom Top Header -->
+            <div class="top-header">
+                <div class="header-left">
+                    <div class="header-icons">
+                        <i class="fa-regular fa-copy" title="Copy path"></i>
+                        <i class="fa-regular fa-folder-open" title="Open file"></i>
+                        <i class="fa-solid fa-arrow-down-long" title="Scroll to bottom"></i>
+                    </div>
+                </div>
+                <div class="header-path">
+                    /var/logs/server.log
+                </div>
+                <div class="header-info">
+                    <span>244.33 KiB</span>
+                    <span>modified on 11/20/25 10:03 AM</span>
+                    <span>UTF-8</span>
+                    <span>Line 1032/2048</span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="editor-tabs">
+                <div class="tab active">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>server.log</span>
+                    <i class="fa-solid fa-xmark close-tab"></i>
+                </div>
+            </div>
+
+            <!-- Top: Main Log View -->
+            <div class="log-content main-view" id="main-logs">
+                <!-- Startup Sequence -->
+                <div class="log-line"><span class="line-num">1001</span><span class="timestamp">2023-10-27
+                        10:15:50.001</span><span class="level info">INFO</span><span class="message">System Boot: Mochi
+                        Log Analyzer v2.0.0</span></div>
+                <div class="log-line"><span class="line-num">1002</span><span class="timestamp">2023-10-27
+                        10:15:50.005</span><span class="level info">INFO</span><span class="message">Loading
+                        configuration from /etc/mochi/config.prod.yaml</span></div>
+                <div class="log-line"><span class="line-num">1003</span><span class="timestamp">2023-10-27
+                        10:15:50.120</span><span class="level debug">DEBUG</span><span class="message">Config loaded: {
+                        "port": 8080, "env": "production" }</span></div>
+                <div class="log-line"><span class="line-num">1004</span><span class="timestamp">2023-10-27
+                        10:15:50.200</span><span class="level info">INFO</span><span class="message">Initializing Core
+                        Services...</span></div>
+
+                <!-- Database Init -->
+                <div class="log-line"><span class="line-num">1005</span><span class="timestamp">2023-10-27
+                        10:15:51.000</span><span class="level info">INFO</span><span class="message">Connecting to
+                        primary database cluster (db-prod-01)</span></div>
+                <div class="log-line pool"><span class="line-num">1006</span><span class="timestamp">2023-10-27
+                        10:15:51.500</span><span class="level info">INFO</span><span class="message">Connection Pool:
+                        Initializing with min_size=10, max_size=100</span></div>
+                <div class="log-line pool"><span class="line-num">1007</span><span class="timestamp">2023-10-27
+                        10:15:51.800</span><span class="level info">INFO</span><span class="message">Connection Pool:
+                        Created 10 connections successfully</span></div>
+
+                <!-- Service Start -->
+                <div class="log-line"><span class="line-num">1008</span><span class="timestamp">2023-10-27
+                        10:15:52.000</span><span class="level info">INFO</span><span class="message">Starting User
+                        Service...</span></div>
+                <div class="log-line"><span class="line-num">1009</span><span class="timestamp">2023-10-27
+                        10:15:52.200</span><span class="level info">INFO</span><span class="message">Starting Auth
+                        Service...</span></div>
+                <div class="log-line"><span class="line-num">1010</span><span class="timestamp">2023-10-27
+                        10:15:52.400</span><span class="level info">INFO</span><span class="message">Starting Payment
+                        Service...</span></div>
+                <div class="log-line api"><span class="line-num">1011</span><span class="timestamp">2023-10-27
+                        10:15:52.450</span><span class="level warn">WARN</span><span class="message">Deprecated API:
+                        Payment Service using v1 API (deprecated)</span></div>
+
+                <!-- Traffic Starts -->
+                <div class="log-line"><span class="line-num">1012</span><span class="timestamp">2023-10-27
+                        10:15:55.000</span><span class="level info">INFO</span><span class="message">Server started on
+                        port 8080. Ready to accept connections.</span></div>
+                <div class="log-line"><span class="line-num">1013</span><span class="timestamp">2023-10-27
+                        10:15:55.100</span><span class="level debug">DEBUG</span><span class="message">Health check
+                        probe received from LB</span></div>
+                <div class="log-line"><span class="line-num">1014</span><span class="timestamp">2023-10-27
+                        10:15:55.105</span><span class="level info">INFO</span><span class="message">Health check
+                        passed. Status: 200 OK</span></div>
+
+                <!-- User Activity -->
+                <div class="log-line"><span class="line-num">1015</span><span class="timestamp">2023-10-27
+                        10:15:56.000</span><span class="level info">INFO</span><span class="message">Request: GET
+                        /api/v1/users/profile [User: 1001]</span></div>
+                <div class="log-line"><span class="line-num">1016</span><span class="timestamp">2023-10-27
+                        10:15:56.050</span><span class="level debug">DEBUG</span><span class="message">Fetching profile
+                        from cache...</span></div>
+                <div class="log-line"><span class="line-num">1017</span><span class="timestamp">2023-10-27
+                        10:15:56.055</span><span class="level info">INFO</span><span class="message">Response: 200 OK
+                        (5ms)</span></div>
+
+                <!-- Issues Begin -->
+                <div class="log-line"><span class="line-num">1018</span><span class="timestamp">2023-10-27
+                        10:16:00.000</span><span class="level info">INFO</span><span class="message">Request: POST
+                        /api/v1/login [User: unknown]</span></div>
+                <div class="log-line auth"><span class="line-num">1019</span><span class="timestamp">2023-10-27
+                        10:16:00.100</span><span class="level error">ERROR</span><span class="message">Auth Failure:
+                        Invalid credentials provided for user 'admin'</span></div>
+                <div class="log-line auth"><span class="line-num">1020</span><span class="timestamp">2023-10-27
+                        10:16:00.150</span><span class="level error">ERROR</span><span class="message">Auth Failure: Too
+                        many failed attempts. IP blocked.</span></div>
+
+                <div class="log-line"><span class="line-num">1021</span><span class="timestamp">2023-10-27
+                        10:16:01.000</span><span class="level info">INFO</span><span class="message">Request: GET
+                        /api/v1/dashboard [User: 1002]</span></div>
+                <div class="log-line timeout"><span class="line-num">1022</span><span class="timestamp">2023-10-27
+                        10:16:01.234</span><span class="level error">ERROR</span><span class="message">Connection
+                        timeout: User service not responding (timeout=5000ms)</span></div>
+                <div class="log-line timeout"><span class="line-num">1023</span><span class="timestamp">2023-10-27
+                        10:16:01.235</span><span class="level error">ERROR</span><span class="message">Stack trace: at
+                        com.mochi.server.Connection.connect(Connection.java:45)</span></div>
+                <div class="log-line"><span class="line-num">1024</span><span class="timestamp">2023-10-27
+                        10:16:01.240</span><span class="level info">INFO</span><span class="message">Retrying request
+                        (Attempt 1/3)...</span></div>
+
+                <!-- Network Issues -->
+                <div class="log-line packet"><span class="line-num">1025</span><span class="timestamp">2023-10-27
+                        10:16:02.000</span><span class="level error">ERROR</span><span class="message">Packet Loss:
+                        Detected 15% packet loss on interface eth0</span></div>
+                <div class="log-line latency"><span class="line-num">1026</span><span class="timestamp">2023-10-27
+                        10:16:02.500</span><span class="level warn">WARN</span><span class="message">Latency > 500ms:
+                        Upstream service response took 1200ms</span></div>
+
+                <!-- Database Issues -->
+                <div class="log-line"><span class="line-num">1027</span><span class="timestamp">2023-10-27
+                        10:16:03.000</span><span class="level info">INFO</span><span class="message">Running scheduled
+                        report generation...</span></div>
+                <div class="log-line query"><span class="line-num">1028</span><span class="timestamp">2023-10-27
+                        10:16:04.500</span><span class="level warn">WARN</span><span class="message">Slow Query: SELECT
+                        * FROM large_table took 1500ms</span></div>
+                <div class="log-line pool"><span class="line-num">1029</span><span class="timestamp">2023-10-27
+                        10:16:04.600</span><span class="level warn">WARN</span><span class="message">Connection Pool:
+                        Pool exhausted (100/100 active)</span></div>
+
+                <!-- Application Errors -->
+                <div class="log-line"><span class="line-num">1030</span><span class="timestamp">2023-10-27
+                        10:16:05.000</span><span class="level info">INFO</span><span class="message">Processing batch
+                        job #4592</span></div>
+                <div class="log-line npe"><span class="line-num">1031</span><span class="timestamp">2023-10-27
+                        10:16:05.112</span><span class="level error">ERROR</span><span
+                        class="message">NullPointerException: User ID is null in BatchProcessor.java:120</span></div>
+                <div class="log-line npe"><span class="line-num">1032</span><span class="timestamp">2023-10-27
+                        10:16:05.113</span><span class="level error">ERROR</span><span class="message">Stack trace:
+                        java.lang.NullPointerException...</span></div>
+
+                <!-- Resource Issues -->
+                <div class="log-line memory"><span class="line-num">1033</span><span class="timestamp">2023-10-27
+                        10:16:08.000</span><span class="level warn">WARN</span><span class="message">High Memory Usage:
+                        Heap is 85% full (GC needed)</span></div>
+                <div class="log-line memory"><span class="line-num">1034</span><span class="timestamp">2023-10-27
+                        10:16:08.500</span><span class="level warn">WARN</span><span class="message">High Memory Usage:
+                        Heap is 92% full - Critical</span></div>
+                <div class="log-line"><span class="line-num">1035</span><span class="timestamp">2023-10-27
+                        10:16:09.000</span><span class="level info">INFO</span><span class="message">Triggering Full
+                        GC...</span></div>
+                <div class="log-line"><span class="line-num">1036</span><span class="timestamp">2023-10-27
+                        10:16:10.000</span><span class="level info">INFO</span><span class="message">GC Completed. Heap
+                        usage: 45%</span></div>
+
+                <!-- Recovery -->
+                <div class="log-line"><span class="line-num">1037</span><span class="timestamp">2023-10-27
+                        10:16:11.000</span><span class="level info">INFO</span><span class="message">System
+                        stabilizing...</span></div>
+                <div class="log-line"><span class="line-num">1038</span><span class="timestamp">2023-10-27
+                        10:16:12.000</span><span class="level info">INFO</span><span class="message">Request: GET
+                        /api/v1/status</span></div>
+                <div class="log-line"><span class="line-num">1039</span><span class="timestamp">2023-10-27
+                        10:16:12.005</span><span class="level info">INFO</span><span class="message">Response: 200
+                        OK</span></div>
+            </div>
+
+            <!-- Filter Management Area -->
+            <div class="filter-manager">
+                <div class="filter-tabs-row">
+                    <span class="filter-tab-label">Quick Filters:</span>
+                    <button class="filter-tab" onclick="toggleFilterGroup('errors', this)">Errors</button>
+                    <button class="filter-tab" onclick="toggleFilterGroup('warnings', this)">Warnings</button>
+                    <button class="filter-tab" onclick="toggleFilterGroup('network', this)">Network</button>
+                    <button class="filter-tab" onclick="toggleFilterGroup('database', this)">Database</button>
+                    <button class="filter-tab"><i class="fa-solid fa-plus"></i> Add New</button>
+                </div>
+                <div class="active-filters-row" style="display: none;">
+                    <span class="active-filter-label">Active:</span>
+
+                    <!-- Group: Errors -->
+                    <div class="filter-subgroup" id="group-errors" style="display: none;">
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="timeout"
+                            style="--chip-bg: #ffadad; --chip-text: #5c0000;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Connection Timeout</span>
+                        </div>
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="npe"
+                            style="--chip-bg: #ffc6ff; --chip-text: #4a0052;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>NullPointer</span>
+                        </div>
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="auth"
+                            style="--chip-bg: #bdb2ff; --chip-text: #2a0052;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Auth Failure</span>
+                        </div>
+                    </div>
+
+                    <!-- Group: Warnings -->
+                    <div class="filter-subgroup" id="group-warnings" style="display: none;">
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="memory"
+                            style="--chip-bg: #ffd6a5; --chip-text: #664d00;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>High Memory</span>
+                        </div>
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="api"
+                            style="--chip-bg: #fdffb6; --chip-text: #666600;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Deprecated API</span>
+                        </div>
+                    </div>
+
+                    <!-- Group: Network -->
+                    <div class="filter-subgroup" id="group-network" style="display: none;">
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="latency"
+                            style="--chip-bg: #9bf6ff; --chip-text: #004a52;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Latency > 500ms</span>
+                        </div>
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="packet"
+                            style="--chip-bg: #a0c4ff; --chip-text: #002a66;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Packet Loss</span>
+                        </div>
+                    </div>
+
+                    <!-- Group: Database -->
+                    <div class="filter-subgroup" id="group-database" style="display: none;">
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="query"
+                            style="--chip-bg: #caffbf; --chip-text: #004d00;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Slow Query</span>
+                        </div>
+                        <div class="filter-chip selected" onclick="toggleChip(this)" data-filter="pool"
+                            style="--chip-bg: #80ed99; --chip-text: #004d00;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Connection Pool</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle: Filter Bar (Klogg Style) -->
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option>Marks and matches</option>
+                        <option>Marks</option>
+                        <option>Matches</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option>Predefined filters</option>
+                    </select>
+                </div>
+                <div class="toggle-group">
+                    <button class="filter-btn" title="Case Sensitive">Aa</button>
+                    <button class="filter-btn" title="Regular Expression">.*</button>
+                    <button class="filter-btn" title="Invert Match"><i class="fa-solid fa-not-equal"></i></button>
+                    <button class="filter-btn" title="Combine Regex"><i class="fa-solid fa-layer-group"></i></button>
+                    <button class="filter-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="filter-input-container">
+                    <input type="text" class="filter-input" value="error|timeout" placeholder="Filter logs..."
+                        oninput="updateFilteredLogs()">
+                    <button class="filter-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="filter-stats">
+                    2 matches found.
+                </div>
+                <button class="live-tail-btn"><i class="fa-solid fa-arrow-down"></i> Live Tail</button>
+            </div>
+
+            <!-- Bottom: Filtered Logs -->
+            <div class="bottom-panel">
+                <div class="panel-content log-content" id="filtered-logs">
+                    <!-- Reusing log-content class for styling -->
+                    <div class="log-line timeout">
+                        <span class="line-num">1028</span>
+                        <span class="timestamp">2023-10-27 10:16:01.234</span>
+                        <span class="level error">ERROR</span>
+                        <span class="message">Connection timeout: User service not responding</span>
+                    </div>
+                    <div class="log-line timeout">
+                        <span class="line-num">1029</span>
+                        <span class="timestamp">2023-10-27 10:16:01.235</span>
+                        <span class="level error">ERROR</span>
+                        <span class="message">Stack trace: at
+                            com.mochi.server.Connection.connect(Connection.java:45)</span>
+                    </div>
+                    <div class="log-line npe">
+                        <span class="line-num">1045</span>
+                        <span class="timestamp">2023-10-27 10:16:05.112</span>
+                        <span class="level error">ERROR</span>
+                        <span class="message">NullPointerException: User ID is null</span>
+                    </div>
+                    <div class="log-line memory">
+                        <span class="line-num">1052</span>
+                        <span class="timestamp">2023-10-27 10:16:08.441</span>
+                        <span class="level warn">WARN</span>
+                        <span class="message">High Memory Usage: Heap is 85% full</span>
+                    </div>
+                    <div class="log-line latency">
+                        <span class="line-num">1089</span>
+                        <span class="timestamp">2023-10-27 10:16:15.002</span>
+                        <span class="level info">INFO</span>
+                        <span class="message">API Latency: /api/v1/users took 650ms (Threshold: 500ms)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar (Mochi AI) -->
+        <aside class="ai-sidebar">
+            <div class="sidebar-header">
+                <span><img src="assets/logo.png" alt="Mochi Logo"
+                        style="height: 20px; vertical-align: middle; margin-right: 5px;"> MOCHI AI</span>
+                <div class="sidebar-actions">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+            </div>
+            <div class="ai-chat" id="chat-messages">
+                <div class="chat-message ai">
+                    <div class="avatar" style="background: transparent; padding: 0;"><img src="assets/logo.png"
+                            alt="Mochi" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                    <div class="message-content">
+                        <p>I noticed a <strong>Connection Timeout</strong> error in lines 1028-1029. This seems to be
+                            related to the User Service.</p>
+                        <p>Would you like me to analyze the preceding logs to find the root cause?</p>
+                    </div>
+                </div>
+                <div class="chat-message user">
+                    <div class="message-content">
+                        <p>Yes, please check if there were any latency spikes before that.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Ask Mochi about your logs..."
+                    onkeypress="handleChatKey(event)">
+                <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </aside>
+
+        <!-- Status Bar -->
+        <footer class="status-bar" style="justify-content: flex-end; gap: 20px;">
+            <div class="status-item"><i class="fa-solid fa-microchip"></i> Active Model: Gemini 1.5 Pro</div>
+            <div class="status-item" onclick="toggleAISidebar()" style="cursor: pointer;"><img src="assets/logo.png"
+                    style="height: 12px; filter: brightness(0) invert(1);">
+                <strong>Mochi AI</strong>
+            </div>
+        </footer>
+
+    </div>
+
+    <div style="text-align: center; padding: 20px; color: #999; font-size: 0.85rem; font-family: 'Inter', sans-serif;">
+        * This playground is designed to display the visual initial features and may not have all functionality working.
+    </div>
+
+
+    <script>
+        function toggleFilterGroup(groupId, tabElement) {
+            // Toggle active state of the tab
+            tabElement.classList.toggle('active');
+            const isActive = tabElement.classList.contains('active');
+
+            // Toggle visibility of the specific subgroup
+            const subgroup = document.getElementById('group-' + groupId);
+            if (subgroup) {
+                subgroup.style.display = isActive ? 'flex' : 'none';
+            }
+
+            // Check if any tab is active to show/hide the main container
+            const anyActive = document.querySelectorAll('.filter-tab.active').length > 0;
+            const activeFiltersRow = document.querySelector('.active-filters-row');
+            if (activeFiltersRow) {
+                activeFiltersRow.style.display = anyActive ? 'flex' : 'none';
+            }
+
+            updateFilteredLogs();
+        }
+
+        function toggleChip(chip) {
+            chip.classList.toggle('selected');
+            updateFilteredLogs();
+        }
+
+        function updateFilteredLogs() {
+            const mainLogs = document.querySelectorAll('#main-logs .log-line');
+            const filteredContainer = document.getElementById('filtered-logs');
+            const searchInput = document.querySelector('.filter-input');
+            const searchValue = searchInput ? searchInput.value : '';
+
+            // Get all active filter criteria from visible and selected chips
+            const activeFilters = new Set();
+            const filterToChipMap = {}; // Map filter name to chip element
+
+            document.querySelectorAll('.filter-subgroup').forEach(group => {
+                if (group.style.display !== 'none') {
+                    group.querySelectorAll('.filter-chip.selected').forEach(chip => {
+                        const filter = chip.getAttribute('data-filter');
+                        if (filter) {
+                            activeFilters.add(filter);
+                            filterToChipMap[filter] = chip;
+                        }
+                    });
+                }
+            });
+
+            // Clear current filtered logs
+            filteredContainer.innerHTML = '';
+
+            // If no filters active AND no search term
+            if (activeFilters.size === 0 && !searchValue) {
+                filteredContainer.innerHTML = '<div style="padding: 20px; color: var(--text-muted); text-align: center;">Select filters or enter regex to view matching logs.</div>';
+                return;
+            }
+
+            // Create regex if search value exists
+            let regex = null;
+            if (searchValue) {
+                try {
+                    regex = new RegExp(searchValue, 'i');
+                } catch (e) {
+                    // Ignore invalid regex
+                }
+            }
+
+            let matchCount = 0;
+            mainLogs.forEach(log => {
+                let matches = false;
+                const matchedFilters = [];
+                let matchedByRegex = false;
+
+                // Check active filters
+                if (activeFilters.size > 0) {
+                    for (const filter of activeFilters) {
+                        if (log.classList.contains(filter)) {
+                            matchedFilters.push(filter);
+                        }
+                    }
+                    if (matchedFilters.length > 0) matches = true;
+                }
+
+                // Check regex (independent of filters)
+                if (regex && regex.test(log.textContent)) {
+                    matches = true;
+                    matchedByRegex = true;
+                }
+
+                if (matches) {
+                    const logClone = log.cloneNode(true);
+
+                    // Append ALL matching chips to the log line (only if filters matched)
+                    if (matchedFilters.length > 0) {
+                        matchedFilters.forEach(filter => {
+                            const originalChip = filterToChipMap[filter];
+                            if (originalChip) {
+                                const chipClone = originalChip.cloneNode(true);
+                                chipClone.classList.remove('selected');
+                                chipClone.style.marginLeft = '10px'; // Keep close to text
+                                chipClone.style.transform = 'scale(0.85)'; // Slightly smaller
+                                chipClone.style.opacity = '1';
+                                chipClone.style.cursor = 'default';
+                                chipClone.style.border = 'none'; // Clean look
+                                chipClone.onclick = null;
+                                logClone.appendChild(chipClone);
+                            }
+                        });
+                    }
+
+                    filteredContainer.appendChild(logClone);
+                    matchCount++;
+                }
+            });
+
+            // Update stats if exists
+            const stats = document.querySelector('.filter-stats');
+            if (stats) stats.textContent = `${matchCount} matches found.`;
+        }
+
+        function toggleAISidebar() {
+            const container = document.querySelector('.app-container');
+            container.classList.toggle('ai-visible');
+        }
+
+        function handleChatKey(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            const chatContainer = document.getElementById('chat-messages');
+
+            if (message) {
+                // Add User Message
+                const userMsgDiv = document.createElement('div');
+                userMsgDiv.className = 'chat-message user';
+                userMsgDiv.innerHTML = `
+                    <div class="message-content">
+                        <p>${message}</p>
+                    </div>
+                `;
+                chatContainer.appendChild(userMsgDiv);
+
+                // Clear input and scroll
+                input.value = '';
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+
+                // Simulate AI Response
+                setTimeout(() => {
+                    const aiMsgDiv = document.createElement('div');
+                    aiMsgDiv.className = 'chat-message ai';
+                    aiMsgDiv.innerHTML = `
+                        <div class="avatar" style="background: transparent; padding: 0;">
+                            <img src="assets/logo.png" alt="Mochi" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="message-content">
+                            <p>I'm analyzing your request about "<strong>${message}</strong>"...</p>
+                            <p>Based on the logs, everything seems normal, but I'll keep monitoring.</p>
+                        </div>
+                    `;
+                    chatContainer.appendChild(aiMsgDiv);
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        // Initial call
+        updateFilteredLogs(); // Don't call initially to keep it empty until interaction
+    </script>
+</body>
+
+</html>
