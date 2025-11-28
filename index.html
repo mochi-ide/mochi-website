@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOCHI - Desktop AI Log Analyzer</title>
+    <title>mochi - Desktop AI Log Analyzer</title>
     <meta name="description"
-        content="MOCHI is a powerful desktop log analyzer that runs locally. Visualize workflows, debug with local LLMs, and keep your data private.">
+        content="mochi is a fast, AI-powered desktop log viewer and analyzer. Handle large log files, visualize state machines, and debug with local LLMs. The modern, intelligent alternative to klogg and glogg.">
+    <meta name="keywords"
+        content="log viewer, log analyzer, klogg alternative, glogg alternative, fast log viewer, large log files, local llm, ai debugging, regex search, state machine visualization, desktop log tool, macos log viewer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,6 +16,40 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/logo.png" type="image/png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mochi.app/">
+    <meta property="og:title" content="mochi - Desktop AI Log Analyzer">
+    <meta property="og:description"
+        content="mochi is a fast, AI-powered desktop log viewer and analyzer. Handle large log files, visualize state machines, and debug with local LLMs.">
+    <meta property="og:image" content="https://mochi.app/assets/social-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mochi.app/">
+    <meta property="twitter:title" content="mochi - Desktop AI Log Analyzer">
+    <meta property="twitter:description"
+        content="mochi is a fast, AI-powered desktop log viewer and analyzer. Handle large log files, visualize state machines, and debug with local LLMs.">
+    <meta property="twitter:image" content="https://mochi.app/assets/social-preview.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "mochi",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS, Windows, Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "A powerful desktop log analyzer that runs locally. Visualize workflows, debug with local LLMs, and keep your data private.",
+      "featureList": "Local LLM integration, State Machine Visualization, Regex Search, Large File Support"
+    }
+    </script>
 </head>
 
 <body>
@@ -24,9 +60,14 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="assets/logo.png" alt="Mochi Logo">
-                <span>MOCHI</span>
+                <img src="assets/logo.png" alt="mochi AI Log Analyzer Logo">
+                <span>mochi</span>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#capabilities">Capabilities</a></li>
@@ -39,6 +80,13 @@
         <section class="hero container">
             <div class="hero-content">
                 <div class="badge">Desktop Native App</div>
+                <div class="full-form">
+                    <span class="word">M<span class="rest">achine</span></span>
+                    <span class="word">O<span class="rest">utput</span></span>
+                    <span class="word">C<span class="rest">ontextual</span></span>
+                    <span class="word">H<span class="rest">euristic</span></span>
+                    <span class="word">I<span class="rest">ntelligence</span></span>
+                </div>
                 <h1>Your Intelligent <span class="gradient-text">Local</span> Log Companion</h1>
                 <p class="subtitle">The cute but powerful log analyzer that lives on your machine. No data leaves your
                     device. Debug faster with local AI context.</p>
@@ -49,8 +97,10 @@
             </div>
             <div class="hero-visual">
                 <div class="dashboard-container">
-                    <img src="assets/dashboard.png" alt="Mochi Dashboard Interface" class="dashboard-img">
+                    <img src="assets/dashboard.png" alt="mochi Desktop App Dashboard Screenshot showing log analysis"
+                        class="dashboard-img">
                 </div>
+                <p class="disclaimer-text">* Image for creative display purposes only. Actual UI may vary.</p>
             </div>
         </section>
 
@@ -109,6 +159,73 @@
                     </div>
                 </div>
             </div>
+
+            <div class="capability-row reversed">
+                <div class="cap-text">
+                    <h3>Private by Design</h3>
+                    <p>Your data never leaves your machine. Mochi is architected for complete privacy, processing
+                        gigabytes of logs locally without sending a single byte to the cloud.</p>
+                    <ul class="check-list">
+                        <li>100% Offline Processing</li>
+                        <li>Bring Your Own Local LLM</li>
+                        <li>Zero Data Exfiltration</li>
+                    </ul>
+                </div>
+                <div class="cap-visual glass">
+                    <div class="shield-visual">
+                        <div class="shield-icon">🔒</div>
+                        <div class="shield-ring"></div>
+                        <div class="shield-ring delayed"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="capability-row">
+                <div class="cap-text">
+                    <h3>Deep Context Awareness</h3>
+                    <p>Mochi doesn't just read text; it understands your code. By embedding your codebase, it connects
+                        log errors directly to the source code that caused them.</p>
+                    <ul class="check-list">
+                        <li>Codebase-aware insights</li>
+                        <li>Intelligent root cause analysis</li>
+                        <li>Smart noise filtering</li>
+                    </ul>
+                </div>
+                <div class="cap-visual glass">
+                    <div class="context-visual">
+                        <div class="brain-node">🧠</div>
+                        <div class="file-node f1">📄</div>
+                        <div class="file-node f2">📄</div>
+                        <div class="file-node f3">📄</div>
+                        <div class="beam b1"></div>
+                        <div class="beam b2"></div>
+                        <div class="beam b3"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="roadmap" class="cta-section container">
+            <div class="glass roadmap-box">
+                <h2>Mark Your Calendars</h2>
+                <p>We are working hard to bring mochi to your desktop. Secure your spot in line today.</p>
+                <div class="calendar-container">
+                    <div class="calendar-visual">
+                        <div class="calendar-card c1">
+                            <div class="cal-header">JAN 2026</div>
+                            <div class="cal-body">1</div>
+                            <div class="cal-tag">Beta</div>
+                        </div>
+                        <div class="calendar-arrow">➜</div>
+                        <div class="calendar-card c2">
+                            <div class="cal-header">JAN 2026</div>
+                            <div class="cal-body">15</div>
+                            <div class="cal-tag">Public</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="register" class="cta-section container">
@@ -126,8 +243,8 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-col">
-                <h4>MOCHI</h4>
-                <p>Machine Output Checker & Heuristic Intelligence</p>
+                <h4>mochi</h4>
+                <p>Machine Output Contextual Heuristic Intelligence</p>
             </div>
             <div class="footer-col">
                 <p>&copy; 2025 Mochi Project. All rights reserved.</p>
@@ -188,6 +305,27 @@
 
         // Attach listener
         document.getElementById('interest-form').addEventListener('submit', window.registerInterest);
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                mobileBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+        }
     </script>
     <script src="script.js"></script>
 </body>
