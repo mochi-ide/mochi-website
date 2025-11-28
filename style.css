@@ -79,36 +79,62 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    /* Cleaner, rounder font */
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #2d2d2d;
+    /* Darker, sharper contrast */
     letter-spacing: -0.02em;
+    position: relative;
+}
+
+.logo span {
+    background: linear-gradient(135deg, #2d2d2d 0%, #5a5a5a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .logo img {
-    height: 40px;
+    height: 48px;
+    /* Slightly larger */
     width: auto;
-    /* Ensure white background of logo blends in */
     mix-blend-mode: multiply;
+    filter: drop-shadow(0 4px 6px rgba(255, 154, 162, 0.2));
+    /* Subtle depth */
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    /* Reduced gap to fit pill backgrounds */
     list-style: none;
     align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .nav-links a {
-    color: var(--text-muted);
+    color: var(--text-main);
     text-decoration: none;
+    font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    position: relative;
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
+    /* Reset the lift, use bg instead */
 }
 
 /* Buttons */
@@ -188,6 +214,8 @@ h1 {
 .gradient-text {
     background: linear-gradient(135deg, var(--primary-color), #ffb7b2);
     -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     -webkit-text-fill-color: transparent;
 }
 
@@ -473,5 +501,46 @@ footer {
 
     .capability-row {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Interest Form */
+.interest-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.interest-form input {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    border: 2px solid white;
+    background: white;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.interest-form input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(255, 154, 162, 0.2);
+}
+
+@media (max-width: 600px) {
+    .interest-form {
+        flex-direction: column;
+    }
+
+    .interest-form input {
+        width: 100%;
+    }
+
+    .interest-form button {
+        width: 100%;
     }
 }

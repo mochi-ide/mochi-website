@@ -30,7 +30,7 @@
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#capabilities">Capabilities</a></li>
-                <li><a href="#download" class="btn-primary small">Download v1.0</a></li>
+                <li><a href="#register" class="btn-primary small">Get Early Access</a></li>
             </ul>
         </nav>
     </header>
@@ -43,7 +43,7 @@
                 <p class="subtitle">The cute but powerful log analyzer that lives on your machine. No data leaves your
                     device. Debug faster with local AI context.</p>
                 <div class="cta-group">
-                    <a href="#download" class="btn-primary">Download for Mac</a>
+                    <a href="#register" class="btn-primary">Request Access</a>
                     <a href="#features" class="btn-secondary">Learn More</a>
                 </div>
             </div>
@@ -111,11 +111,14 @@
             </div>
         </section>
 
-        <section id="download" class="cta-section container">
+        <section id="register" class="cta-section container">
             <div class="glass cta-box">
                 <h2>Ready to debug smarter?</h2>
-                <p>Join the developers using Mochi to save hours on log analysis.</p>
-                <button class="btn-primary">Download Mochi v1.0</button>
+                <p>Join the waitlist to get early access to Mochi.</p>
+                <form id="interest-form" class="interest-form">
+                    <input type="email" id="email-input" placeholder="Enter your email address" required>
+                    <button type="submit" id="register-btn" class="btn-primary">Notify Me</button>
+                </form>
             </div>
         </section>
     </main>
@@ -132,6 +135,60 @@
         </div>
     </footer>
 
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        // TODO: Replace with your actual Firebase configuration
+        // You can find this in the Firebase Console -> Project Settings
+        const firebaseConfig = {
+            projectId: "mochi-ed670",
+            databaseURL: "https://mochi-ed670-default-rtdb.firebaseio.com"
+            // apiKey: "YOUR_API_KEY", 
+            // authDomain: "mochi-ed670.firebaseapp.com",
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        window.registerInterest = async (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('email-input');
+            const btn = document.getElementById('register-btn');
+            const email = emailInput.value;
+
+            if (!email) return;
+
+            btn.textContent = 'Saving...';
+            btn.disabled = true;
+
+            try {
+                const emailsRef = ref(db, 'interests');
+                const newEmailRef = push(emailsRef);
+                await set(newEmailRef, {
+                    email: email,
+                    timestamp: new Date().toISOString()
+                });
+
+                btn.textContent = 'Thanks!';
+                emailInput.value = '';
+                alert('Thanks for your interest! We will be in touch.');
+            } catch (error) {
+                console.error("Error saving email:", error);
+                btn.textContent = 'Error';
+                alert('Something went wrong. Please check the console or try again.');
+            } finally {
+                setTimeout(() => {
+                    btn.textContent = 'Notify Me';
+                    btn.disabled = false;
+                }, 3000);
+            }
+        };
+
+        // Attach listener
+        document.getElementById('interest-form').addEventListener('submit', window.registerInterest);
+    </script>
     <script src="script.js"></script>
 </body>
 
